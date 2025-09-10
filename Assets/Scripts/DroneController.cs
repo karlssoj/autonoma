@@ -1,7 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-//PÄLLIPÄÄÄRON
 
 public class DroneController : MonoBehaviour
 {
