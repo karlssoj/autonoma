@@ -16,8 +16,12 @@ public class CleanerController : Agent
         Reset();
     }
 
+	//Anropas när en action tas emot från "hjärnan" (om en intränad modell används på agenten)/trainer APIt (vid träning)/Heurustic-mode 
+	//(om man kör simulationen i människostyrt läge)     
     public override void OnActionReceived(ActionBuffers actions)
     {
+		//En Array med disreta actions. Två element med värde 0, 1, eller 2
+		//Matchar med de actions man definierat i Beahiour Parameters skriptet
         var action = actions.DiscreteActions;
 
         if (action[0] == 1)
@@ -30,10 +34,14 @@ public class CleanerController : Agent
             TurnLeft();
     }
 
+	//Anropas får varje frame om man kör simulationen i Heuristic mode (människostyrt läge), dvs. om vi inte har 
+	//Python trainer API igång och om vi inte har kopplat en intränad modell till agenten
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         var action = actionsOut.DiscreteActions;
 
+		//Här ger användaren värden för actions-buffern manuellt under körning. Dessa värden tas som input i
+		//OnActionsReceived
         if (Input.GetKey(KeyCode.UpArrow)) action[0] = 1;
         else if (Input.GetKey(KeyCode.DownArrow)) action[0] = 2;
 
@@ -48,7 +56,7 @@ public class CleanerController : Agent
         Reset();
     }
 
-
+	//Sätter damsugaren på sin ursprungliga position och slumpar ut en ny koordinat för skräpet
     void Reset()
     {
         transform.position = StartPosition;
@@ -61,7 +69,7 @@ public class CleanerController : Agent
         Dust.transform.localPosition = new Vector3(Random.Range(-4.0f, 4.0f), Dust.transform.localPosition.y, Random.Range(-4.0f, 4.0f));
     }
 
-
+	//Rörelsefunktioner för damsugaren
     void MoveForward()
     {
         transform.Translate(0, 0, Speed * Time.deltaTime);
@@ -82,11 +90,16 @@ public class CleanerController : Agent
         transform.Rotate(0, -TurnSpeed * Time.deltaTime, 0);
     }
 
+
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Wall")
         {
             Debug.Log("FAILURE!");
+			
+			//Om damsugaren krockar med väggen får den -1p och så startar vi om träningsepisoden
+			//EndEpoisode triggar OnEpisodeBegin funtionen
             AddReward(-1.0f);
             EndEpisode();
         }
@@ -94,6 +107,9 @@ public class CleanerController : Agent
         if (collision.gameObject.tag == "Dust")
         {
             Debug.Log("SUCCESS!");
+			
+			//Om damsugaren nuddar vid skräpet får den +1p och så startar vi om träningsepisoden
+			//EndEpoisode triggar OnEpisodeBegin funtionen
             AddReward(1.0f);
             EndEpisode();
         }
