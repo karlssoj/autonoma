@@ -1,0 +1,65 @@
+{
+    "VacumBrain": {
+        "checkpoints": [
+            {
+                "steps": 999993,
+                "file_path": "results\\Stage3b\\VacumBrain\\VacumBrain-999993.onnx",
+                "reward": 0.11348019300826959,
+                "creation_time": 1758025800.311631,
+                "auxillary_file_paths": [
+                    "results\\Stage3b\\VacumBrain\\VacumBrain-999993.pt"
+                ]
+            },
+            {
+                "steps": 1000057,
+                "file_path": "results\\Stage3b\\VacumBrain\\VacumBrain-1000057.onnx",
+                "reward": 0.11348019300826959,
+                "creation_time": 1758025800.3625154,
+                "auxillary_file_paths": [
+                    "results\\Stage3b\\VacumBrain\\VacumBrain-1000057.pt"
+                ]
+            },
+            {
+                "steps": 1499961,
+                "file_path": "results\\Stage3b\\VacumBrain\\VacumBrain-1499961.onnx",
+                "reward": 0.5176183208549285,
+                "creation_time": 1758026164.1014807,
+                "auxillary_file_paths": [
+                    "results\\Stage3b\\VacumBrain\\VacumBrain-1499961.pt"
+                ]
+            },
+            {
+                "steps": 1999988,
+                "file_path": "results\\Stage3b\\VacumBrain\\VacumBrain-1999988.onnx",
+                "reward": null,
+                "creation_time": 1758026500.451006,
+                "auxillary_file_paths": [
+                    "results\\Stage3b\\VacumBrain\\VacumBrain-1999988.pt"
+                ]
+            },
+            {
+                "steps": 2483084,
+                "file_path": "results\\Stage3b\\VacumBrain\\VacumBrain-2483084.onnx",
+                "reward": null,
+                "creation_time": 1758026818.6752884,
+                "auxillary_file_paths": [
+                    "results\\Stage3b\\VacumBrain\\VacumBrain-2483084.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2483084,
+            "file_path": "results\\Stage3b\\VacumBrain.onnx",
+            "reward": null,
+            "creation_time": 1758026818.6752884,
+            "auxillary_file_paths": [
+                "results\\Stage3b\\VacumBrain\\VacumBrain-2483084.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.8.0+cpu"
+    }
+}

@@ -2,22 +2,31 @@
     "VacumBrain": {
         "checkpoints": [
             {
-                "steps": 167313,
-                "file_path": "results\\Stage2\\VacumBrain\\VacumBrain-167313.onnx",
-                "reward": 0.0,
-                "creation_time": 1757581334.3538742,
+                "steps": 499989,
+                "file_path": "results\\Stage2\\VacumBrain\\VacumBrain-499989.onnx",
+                "reward": 0.9808153477218226,
+                "creation_time": 1758015776.084709,
                 "auxillary_file_paths": [
-                    "results\\Stage2\\VacumBrain\\VacumBrain-167313.pt"
+                    "results\\Stage2\\VacumBrain\\VacumBrain-499989.pt"
+                ]
+            },
+            {
+                "steps": 500011,
+                "file_path": "results\\Stage2\\VacumBrain\\VacumBrain-500011.onnx",
+                "reward": 0.9809069212410502,
+                "creation_time": 1758015776.139466,
+                "auxillary_file_paths": [
+                    "results\\Stage2\\VacumBrain\\VacumBrain-500011.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 167313,
+            "steps": 500011,
             "file_path": "results\\Stage2\\VacumBrain.onnx",
-            "reward": 0.0,
-            "creation_time": 1757581334.3538742,
+            "reward": 0.9809069212410502,
+            "creation_time": 1758015776.139466,
             "auxillary_file_paths": [
-                "results\\Stage2\\VacumBrain\\VacumBrain-167313.pt"
+                "results\\Stage2\\VacumBrain\\VacumBrain-500011.pt"
             ]
         }
     },
